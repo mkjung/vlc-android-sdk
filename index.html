@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>vlc-android-sdk-ivi by mkjung</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>vlc-android-sdk-ivi</h1>
+        <h2>VLC Android SDK for IVI</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/mkjung/vlc-android-sdk-ivi/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/mkjung/vlc-android-sdk-ivi/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/mkjung/vlc-android-sdk-ivi" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="vlc-android-sdk-ivi" class="anchor" href="#vlc-android-sdk-ivi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>vlc-android-sdk-ivi</h1>
+
+<h1></h1>
+
+<p>VLC Android SDK for IVI</p>
+
+<h2>
+<a id="get-it-via-maven-central" class="anchor" href="#get-it-via-maven-central" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get it via Maven Central</h2>
+
+<p>Just add this dependency to your project and you're good to go.</p>
+
+<pre>dependencies {
+    compile 'io.github.mkjung:vlc-android-sdk-ivi:0.0.1'
+}</pre>
+
+<h2>
+<a id="building-the-libvlc-android-sdk-for-ivi-yourself" class="anchor" href="#building-the-libvlc-android-sdk-for-ivi-yourself" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building the LibVLC Android SDK for IVI yourself</h2>
+
+<p>To build a fresh version of the LibVLC Android SDK for IVI,
+please make sure that you have setup your machine correctly.
+(You can ignore the steps after and including 'Building'):
+<a href="https://wiki.videolan.org/AndroidCompile">https://wiki.videolan.org/AndroidCompile</a></p>
+
+<p>Afterwards use this commands</p>
+
+<pre><code>mkdir -p ~/workspace &amp;&amp; cd ~/workspace
+git clone https://github.com/mkjung/vlc-android-sdk-ivi.git
+cd vlc-android-sdk-ivi
+./gradlew buildLibVlc
+vim vlc-android/compile-libvlc.sh
+'''
+/NDKv # find 'NDKv'
+change 11*) -&gt; 11*|12*)
+'''
+wget -P vlc-android/vlc/contrib/tarballs https://ftp.gnu.org/gnu/nettle/nettle-3.2.tar.gz
+./gradlew buildLibVlc
+./gradlew install
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "vlc-android-sdk-ivi",
+  "tagline": "VLC Android SDK for IVI",
+  "body": "# vlc-android-sdk-ivi\r\n===============\r\n\r\nVLC Android SDK for IVI\r\n\r\nGet it via Maven Central\r\n------------------------\r\nJust add this dependency to your project and you're good to go.\r\n\r\n<pre>dependencies {\r\n    compile 'io.github.mkjung:vlc-android-sdk-ivi:0.0.1'\r\n}</pre>\r\n\r\nBuilding the LibVLC Android SDK for IVI yourself\r\n----------------------------------------\r\n\r\nTo build a fresh version of the LibVLC Android SDK for IVI,\r\nplease make sure that you have setup your machine correctly.\r\n(You can ignore the steps after and including 'Building'):\r\nhttps://wiki.videolan.org/AndroidCompile\r\n\r\nAfterwards use this commands\r\n\r\n```\r\nmkdir -p ~/workspace && cd ~/workspace\r\ngit clone https://github.com/mkjung/vlc-android-sdk-ivi.git\r\ncd vlc-android-sdk-ivi\r\n./gradlew buildLibVlc\r\nvim vlc-android/compile-libvlc.sh\r\n'''\r\n/NDKv # find 'NDKv'\r\nchange 11*) -> 11*|12*)\r\n'''\r\nwget -P vlc-android/vlc/contrib/tarballs https://ftp.gnu.org/gnu/nettle/nettle-3.2.tar.gz\r\n./gradlew buildLibVlc\r\n./gradlew install\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
